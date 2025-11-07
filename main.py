@@ -3,6 +3,8 @@ from flask import Flask, request, render_template
 from app import utilities
 from config import Config
 
+import gradio as gr
+
 app = Flask(__name__)
 app.config.from_object(Config)
 

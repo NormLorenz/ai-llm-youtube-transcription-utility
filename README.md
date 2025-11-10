@@ -69,7 +69,7 @@ You can customize the `type` of notification:
 
 ---
 
-# How would you prompt a LLM model with an array of Python dictionaries?
+# How would you prompt a LLM model with a list of Python dictionaries?
 
 ### 🧠 General Prompting Strategy
 

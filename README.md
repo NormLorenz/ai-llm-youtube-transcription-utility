@@ -138,6 +138,6 @@ Who is the oldest person and what is their role?
 - **Avoid ambiguity**—LLMs don’t infer intent well from vague prompts.
 - **Keep it readable**—formatting matters for comprehension.
 
-Would you like help crafting a prompt for a specific use case, like generating documentation or filtering based on conditions?
+---
 
 

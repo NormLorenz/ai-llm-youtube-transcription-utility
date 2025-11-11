@@ -163,8 +163,6 @@ If `utilities.py` is in a subfolder (e.g., `helpers/utilities.py`), you’ll nee
 from helpers.utilities import some_function
 ```
 
----
-
 ### 🧱 Should `utilities.py` Be a Class?
 
 Not necessarily. Here's a quick guide:
@@ -177,6 +175,45 @@ Not necessarily. Here's a quick guide:
 | Just organizing utility logic | ❌ No — modules are fine |
 
 So if `utilities.py` just contains things like `def clean_text()`, `def format_date()`, etc., a module with plain functions is perfect.
+
+# How do I apply css to a Gradio object?
+
+You can apply CSS to a Gradio interface using the `css` parameter in the `gr.Interface()` or `gr.Blocks()` constructor. This allows you to customize the appearance of components like buttons, textboxes, and containers.
+
+### 🎨 Example: Applying CSS in Gradio
+
+```python
+import gradio as gr
+
+custom_css = """
+#my-button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+"""
+
+def greet(name):
+    return f"Hello, {name}!"
+
+with gr.Blocks(css=custom_css) as demo:
+    name_input = gr.Textbox(label="Your Name")
+    greet_button = gr.Button("Greet", elem_id="my-button")
+    output = gr.Textbox(label="Greeting")
+
+    greet_button.click(fn=greet, inputs=name_input, outputs=output)
+
+demo.launch()
+```
+
+### 🧩 Key Concepts
+
+- **`elem_id`**: Assigns a unique ID to a component so you can target it with CSS.
+- **`css` parameter**: Accepts a string of CSS rules.
+- **Scoped styling**: Gradio uses Shadow DOM for some components, so not all global CSS will apply—use `elem_id` or `elem_classes` for precision.
+
 
 
 

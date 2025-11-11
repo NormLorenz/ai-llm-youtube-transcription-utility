@@ -214,6 +214,52 @@ demo.launch()
 - **`css` parameter**: Accepts a string of CSS rules.
 - **Scoped styling**: Gradio uses Shadow DOM for some components, so not all global CSS will apply—use `elem_id` or `elem_classes` for precision.
 
+# How do I import a file called utilities.py that exists in the content folder of my Colab project and reference a function called fetch_transcript in main.ipynb
+
+To import a Python file like `utilities.py` from the `content` folder in your Colab project and use its `fetch_transcript` function in `main.ipynb`, follow these steps:
+
+### ✅ Step-by-step setup in `main.ipynb`
+
+1. **Mount your Google Drive (if needed):**
+   If your `content` folder is inside Google Drive:
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
+   ```
+
+2. **Ensure the file is in the correct location:**
+   If `utilities.py` is directly in `/content`, you’re good. If it’s in a subfolder like `/content/my_folder`, adjust the path accordingly.
+
+3. **Add the folder to Python’s path (if needed):**
+   ```python
+   import sys
+   sys.path.append('/content')  # or '/content/my_folder' if it's nested
+   ```
+
+4. **Import the function:**
+   You can now import the function like this:
+   ```python
+   from utilities import fetch_transcript
+   ```
+
+5. **Use the function:**
+   ```python
+   transcript = fetch_transcript("video_id_or_url")
+   print(transcript)
+   ```
+
+---
+
+### 🛠️ Troubleshooting tips
+
+- If you get a `ModuleNotFoundError`, double-check the path and filename.
+- If the file is in a subfolder, use:
+  ```python
+  from my_folder.utilities import fetch_transcript
+  ```
+  and make sure to add `/content/my_folder` to `sys.path`.
+
+Would you like help verifying the folder structure or testing the import interactively?
 
 
 

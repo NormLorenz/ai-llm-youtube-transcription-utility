@@ -1,4 +1,8 @@
-
+# TODO
+*  For clearity, rename the models to what they really are called instead of GPT, Claude, Gemini
+*  Hook in the toaster
+*  Remove unused files in the project (config.py, main.html, main.py, pyproject.toml, requirments.txt un.lock
+  
 # How do you display an HTML table in Gardio?
 
 Gradio itself doesn’t directly generate HTML tables as part of its core UI components, but you can absolutely **display HTML tables** within a Gradio interface using the `gr.HTML()` component. This allows you to embed any custom HTML—including tables—into your app.

@@ -1,5 +1,6 @@
 # ai-llm-youtube-transcription-utility
 
+
 # How do you display an HTML table in Gardio?
 
 Gradio itself doesn’t directly generate HTML tables as part of its core UI components, but you can absolutely **display HTML tables** within a Gradio interface using the `gr.HTML()` component. This allows you to embed any custom HTML—including tables—into your app.
@@ -31,7 +32,6 @@ If you want to generate the table dynamically from Python data (like a list of d
 
 Would you like help building a dynamic table from data, or integrating it into a larger Gradio app?
 
----
 
 # Can you display a toaster in Gradio?
 
@@ -67,8 +67,6 @@ You can customize the `type` of notification:
 - Notifications are ephemeral and appear briefly in the corner.
 - You can trigger them inside any function tied to a Gradio event.
 
----
-
 # How would you prompt a LLM model with a list of Python dictionaries?
 
 ### 🧠 General Prompting Strategy
@@ -82,8 +80,6 @@ data = [
     {"name": "Charlie", "age": 35, "role": "Manager"}
 ]
 ```
-
----
 
 ### ✍️ Prompting for Different Tasks
 
@@ -127,9 +123,8 @@ Given this data:
     {"name": "Charlie", "age": 35, "role": "Manager"}
 ]
 Who is the oldest person and what is their role?
-```
 
----
+```
 
 ### ✅ Best Practices
 
@@ -138,6 +133,52 @@ Who is the oldest person and what is their role?
 - **Avoid ambiguity**—LLMs don’t infer intent well from vague prompts.
 - **Keep it readable**—formatting matters for comprehension.
 
+
+# In Python, how do you reference a file called utilities.py which contains several functions in the main.py. Should utilities.py be a class?
+
+Great question, Norm! Here's how to reference `utilities.py` in `main.py`, and whether it should be a class depends on how you're organizing your code.
+
+
+### 🧩 Referencing `utilities.py` in `main.py`
+
+Assuming both files are in the same directory:
+
+```python
+# main.py
+import utilities
+
+# Call a function from utilities.py
+utilities.some_function()
+```
+
+Or, if you want to import specific functions:
+
+```python
+from utilities import some_function, another_function
+
+some_function()
+```
+
+If `utilities.py` is in a subfolder (e.g., `helpers/utilities.py`), you’ll need an `__init__.py` file in that folder to treat it as a package:
+
+```python
+from helpers.utilities import some_function
+```
+
 ---
+
+### 🧱 Should `utilities.py` Be a Class?
+
+Not necessarily. Here's a quick guide:
+
+| Use Case | Should You Use a Class? |
+|----------|-------------------------|
+| Grouping stateless helper functions | ❌ No — use plain functions |
+| Managing state or configuration | ✅ Yes — use a class |
+| Creating reusable components with methods | ✅ Yes — use a class |
+| Just organizing utility logic | ❌ No — modules are fine |
+
+So if `utilities.py` just contains things like `def clean_text()`, `def format_date()`, etc., a module with plain functions is perfect.
+
 
 

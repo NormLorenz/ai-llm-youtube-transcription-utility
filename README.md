@@ -1,5 +1,3 @@
-# ai-llm-youtube-transcription-utility
-
 
 # How do you display an HTML table in Gardio?
 

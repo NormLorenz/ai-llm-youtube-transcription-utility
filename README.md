@@ -263,6 +263,49 @@ To import a Python file like `utilities.py` from the `content` folder in your Co
   ```
   and make sure to add `/content/my_folder` to `sys.path`.
 
+# How do I copy HTML in Gradio and put it in the clipboard?
+
+To copy HTML content to the clipboard in a Gradio app, you can use a combination of Gradio's `HTML` component and a bit of JavaScript embedded in the HTML. Here's a simple example:
+
+### ✅ Example: Copy HTML to Clipboard in Gradio
+
+```python
+import gradio as gr
+
+html_content = """
+<div id="copyTarget">Hello, <strong>Gradio!</strong></div>
+<button onclick="copyToClipboard()">Copy HTML</button>
+<script>
+function copyToClipboard() {
+  const target = document.getElementById("copyTarget");
+  const html = target.outerHTML;
+  navigator.clipboard.writeText(html).then(() => {
+    alert("HTML copied to clipboard!");
+  });
+}
+</script>
+"""
+
+with gr.Blocks() as demo:
+    gr.HTML(html_content)
+
+demo.launch()
+```
+
+### 🔍 How It Works
+- `#copyTarget` is the HTML element you want to copy.
+- `outerHTML` grabs the full HTML string of that element.
+- `navigator.clipboard.writeText()` copies it to the clipboard.
+- A button triggers the copy action via `onclick`.
+
+### 🛠 Notes
+- Clipboard access requires HTTPS or localhost.
+- This works in most modern browsers.
+- You can customize the copied content (e.g., innerHTML, plain text, etc.).
+
+Would you like help adapting this for a specific use case—like copying Markdown, styled HTML, or user-generated content?
+
+
 Would you like help verifying the folder structure or testing the import interactively?
 
 

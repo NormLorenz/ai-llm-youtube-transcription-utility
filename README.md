@@ -4,6 +4,7 @@
 *  Remove unused files in the project (config.py, main.html, main.py, pyproject.toml, requirments.txt un.lock
 *  Start to hook in the AI. Determine to use frontier or open source models.
 *  Work on the system and user prompts.
+*  Here is a good URL to test https://www.youtube.com/watch?v=L6HnBjnkKmM&list=PLCCi8icw2DAO1qZGH7heUyTB8bJP1ICZ5&index=28
   
 # How do you display an HTML table in Gardio?
 

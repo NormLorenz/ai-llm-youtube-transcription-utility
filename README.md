@@ -1,7 +1,9 @@
 # TODO
 *  For clearity, rename the models to what they really are called instead of GPT, Claude, Gemini
-*  Hook in the toaster
+*  Figure out why the copies code is grayed out - maybe this line  window.getSelection().removeAllRanges(); at the end of the javascript
 *  Remove unused files in the project (config.py, main.html, main.py, pyproject.toml, requirments.txt un.lock
+*  Start to hook in the AI. Determine to use frontier or open source models.
+*  Work on the system and user prompts.
   
 # How do you display an HTML table in Gardio?
 

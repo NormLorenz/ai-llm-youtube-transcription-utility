@@ -6,6 +6,9 @@
 *  Work on the system and user prompts.
 *  Here is a good URL to test https://www.youtube.com/watch?v=L6HnBjnkKmM&list=PLCCi8icw2DAO1qZGH7heUyTB8bJP1ICZ5&index=28
   
+# Starting Point
+* This code https://github.com/NormLorenz/ai-llm-google-colab/blob/main/jupyter-notebooks/code-commenter.ipynb was used as a starting point.
+
 # How do you display an HTML table in Gardio?
 
 Gradio itself doesn’t directly generate HTML tables as part of its core UI components, but you can absolutely **display HTML tables** within a Gradio interface using the `gr.HTML()` component. This allows you to embed any custom HTML—including tables—into your app.
